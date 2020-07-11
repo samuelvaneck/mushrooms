@@ -19,7 +19,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot'
   gem 'faker'
+  gem 'pry'
   gem 'rails-controller-testing'
+  gem 'rb-readline'
   gem 'rspec-rails'
 end
 
