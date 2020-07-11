@@ -8,20 +8,20 @@ class Mushroom < ApplicationRecord
   BRUISES = [['bruises', 't'], ['no', 'f']].freeze
   ODOR = [['almond', 'a'], ['anise', 'l'], ['creosote', 'c'], ['fishy', 'y'], ['foul', 'f'], ['musty', 'm'], ['none', 'n'], ['pungent', 'p'], ['spicy', 's']].freeze
   GILL_ATTACHMENT = [['attached', 'a'], ['descending', 'd'], ['free', 'f'], ['notched', 'n']].freeze
-  GILL_SPACINT = [['close', 'c'], ['crowded', 'w'], ['distant', 'd']].freeze
+  GILL_SPACING = [['close', 'c'], ['crowded', 'w'], ['distant', 'd']].freeze
   GILL_SIZE = [['broad', 'b'], ['narrow', 'n']].freeze
-  GILL_COLOR = [['black', 'k'],'brown', 'n'], ['buff', 'b'], ['chocolate', 'h'], ['gray', 'g'], ['green', 'r'], ['orange', 'o'], ['pink', 'p'], ['purple', 'u'], ['red', 'e'],  ['white', 'w'], ['yellow', 'y'].freeze
-  STALK_SHAPE = [['enlarging', 'e'], ['tapering', 't']]
+  GILL_COLOR = [['black', 'k'], ['brown', 'n'], ['buff', 'b'], ['chocolate', 'h'], ['gray', 'g'], ['green', 'r'], ['orange', 'o'], ['pink', 'p'], ['purple', 'u'], ['red', 'e'],  ['white', 'w'], ['yellow', 'y']].freeze
+  STALK_SHAPE = [['enlarging', 'e'], ['tapering', 't']].freeze
   STALK_ROOT = [['bulbous', 'b'], ['club', 'c'], ['cup', 'u'], ['equal', 'e'], [' rhizomorphs', 'z'], ['rooted', 'r'], ['missing', '?']].freeze
-  STALK_SURFACE_ABOVE_RING = [['fibrous, f'], ['scaly, y'], ['silky, k'], ['smooth, s']].freeze
-  STALK_SURFACE_BELOW_RING = [['fibrous, f'], ['scaly, y'], ['silky, k'], ['smooth, s']].freeze
+  STALK_SURFACE_ABOVE_RING = [['fibrous', 'f'], ['scaly', 'y'], ['silky', 'k'], ['smooth', 's']].freeze
+  STALK_SURFACE_BELOW_RING = [['fibrous', 'f'], ['scaly', 'y'], ['silky', 'k'], ['smooth', 's']].freeze
   STALK_COLOR_ABOVE_RING = [['brown', 'n'],['buff', 'b'], ['cinnamon', 'c'], ['gray', 'g'], ['orange', 'o'], ['pink', 'p'], ['red', 'e'], ['white', 'w'], ['yellow', 'y']].freeze
   STALK_COLOR_BELOW_RING = [['brown', 'n'],['buff', 'b'], ['cinnamon', 'c'], ['gray', 'g'], ['orange', 'o'], ['pink', 'p'], ['red', 'e'], ['white', 'w'], ['yellow', 'y']].freeze
   VEIL_TYPE = [['partial', 'p'], ['universal', 'u']].freeze
   VEIL_COLOR = [['brown', 'n'], ['orange', 'o'], ['white', 'w'], ['yellow', 'y']].freeze
   RING_NUMBER =[['none', 'n'], ['one', 'o'], ['two', 't']].freeze
   RING_TYPE = [['cobwebby', 'c'], ['evanescent', 'e'], ['flaring', 'f'], ['large', 'l'], [' none', 'n'], ['pendant', 'p'], ['sheathing', 's'], ['zone', 'z']].freeze
-  SPORE_PRINT_COLOR = ['black', 'k', ['brown', 'n'], ['buff', 'b'], ['chocolate', 'h'], ['green', 'r'], ['orange', 'o'], ['purple', 'u'], ['white', 'w'], ['yellow', 'y']].freeze
+  SPORE_PRINT_COLOR_RANGE = [['black', 'k'], ['brown', 'n'], ['buff', 'b'], ['chocolate', 'h'], ['green', 'r'], ['orange', 'o'], ['purple', 'u'], ['white', 'w'], ['yellow', 'y']].freeze
   POPULATION = [['abundant', 'a'], ['clustered', 'c'], ['numerous', 'n'], [' scattered', 's'], ['several', 'v'], ['solitary', 'y']].freeze
   HABITAT = [['grasses', 'g'], ['leaves', 'l'], ['meadows', 'm'], ['paths', 'p'], ['urban', 'u'], ['waste', 'w'], ['woods', 'd']].freeze
 
