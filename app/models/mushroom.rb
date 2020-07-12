@@ -2,28 +2,28 @@
 
 class Mushroom < ApplicationRecord
 
-  CAP_SHAPE = [['bell', 'b'], ['conical', 'c'], ['convex', 'x'], ['flat', 'f'], ['knobbed', 'k'], ['sunken', 's']].freeze
-  CAP_SURFACE = [['fibrous', 'f'], ['grooves', 'g'], ['scaly', 'y'], ['smooth', 's']].freeze
-  CAP_COLOR = [['brown', 'n'], ['buff', 'b'] , ['cinnamon', 'c'], ['gray', 'g'], ['green', 'r'], ['pink', 'p'], ['purple', 'u'], ['red', 'e'], ['white', 'w'], ['yellow', 'y']].freeze
-  BRUISES = [['bruises', 't'], ['no', 'f']].freeze
-  ODOR = [['almond', 'a'], ['anise', 'l'], ['creosote', 'c'], ['fishy', 'y'], ['foul', 'f'], ['musty', 'm'], ['none', 'n'], ['pungent', 'p'], ['spicy', 's']].freeze
-  GILL_ATTACHMENT = [['attached', 'a'], ['descending', 'd'], ['free', 'f'], ['notched', 'n']].freeze
-  GILL_SPACING = [['close', 'c'], ['crowded', 'w'], ['distant', 'd']].freeze
-  GILL_SIZE = [['broad', 'b'], ['narrow', 'n']].freeze
-  GILL_COLOR = [['black', 'k'], ['brown', 'n'], ['buff', 'b'], ['chocolate', 'h'], ['gray', 'g'], ['green', 'r'], ['orange', 'o'], ['pink', 'p'], ['purple', 'u'], ['red', 'e'],  ['white', 'w'], ['yellow', 'y']].freeze
-  STALK_SHAPE = [['enlarging', 'e'], ['tapering', 't']].freeze
-  STALK_ROOT = [['bulbous', 'b'], ['club', 'c'], ['cup', 'u'], ['equal', 'e'], [' rhizomorphs', 'z'], ['rooted', 'r'], ['missing', '?']].freeze
-  STALK_SURFACE_ABOVE_RING = [['fibrous', 'f'], ['scaly', 'y'], ['silky', 'k'], ['smooth', 's']].freeze
-  STALK_SURFACE_BELOW_RING = [['fibrous', 'f'], ['scaly', 'y'], ['silky', 'k'], ['smooth', 's']].freeze
-  STALK_COLOR_ABOVE_RING = [['brown', 'n'],['buff', 'b'], ['cinnamon', 'c'], ['gray', 'g'], ['orange', 'o'], ['pink', 'p'], ['red', 'e'], ['white', 'w'], ['yellow', 'y']].freeze
-  STALK_COLOR_BELOW_RING = [['brown', 'n'],['buff', 'b'], ['cinnamon', 'c'], ['gray', 'g'], ['orange', 'o'], ['pink', 'p'], ['red', 'e'], ['white', 'w'], ['yellow', 'y']].freeze
-  VEIL_TYPE = [['partial', 'p'], ['universal', 'u']].freeze
-  VEIL_COLOR = [['brown', 'n'], ['orange', 'o'], ['white', 'w'], ['yellow', 'y']].freeze
-  RING_NUMBER =[['none', 'n'], ['one', 'o'], ['two', 't']].freeze
-  RING_TYPE = [['cobwebby', 'c'], ['evanescent', 'e'], ['flaring', 'f'], ['large', 'l'], [' none', 'n'], ['pendant', 'p'], ['sheathing', 's'], ['zone', 'z']].freeze
-  SPORE_PRINT_COLOR_RANGE = [['black', 'k'], ['brown', 'n'], ['buff', 'b'], ['chocolate', 'h'], ['green', 'r'], ['orange', 'o'], ['purple', 'u'], ['white', 'w'], ['yellow', 'y']].freeze
-  POPULATION = [['abundant', 'a'], ['clustered', 'c'], ['numerous', 'n'], [' scattered', 's'], ['several', 'v'], ['solitary', 'y']].freeze
-  HABITAT = [['grasses', 'g'], ['leaves', 'l'], ['meadows', 'm'], ['paths', 'p'], ['urban', 'u'], ['waste', 'w'], ['woods', 'd']].freeze
+  CAP_SHAPE = { b: 'bell', c: 'conical', x: 'convex', f: 'flat', k: 'knobbed', s:'sunken' }.freeze
+  CAP_SURFACE = { f: 'fibrous', g: 'grooves', y: 'scaly', s: 'smooth' }.freeze
+  CAP_COLOR = { n: 'brown', b: 'buff', c: 'cinnamon', g: 'gray', r: 'green', p: 'pink', u: 'purple', e: 'red', w: 'white', y: 'yellow' }.freeze
+  BRUISES = { t: 'bruises', f: 'no' }.freeze
+  ODOR = { a: 'almond', l: 'anise', c: 'creosote', y: 'fishy', f: 'foul', m: 'musty', n: 'none', p: 'pungent', s: 'spicy' }.freeze
+  GILL_ATTACHMENT = { a: 'attached', d: 'descending', f: 'free', n: 'notched' }.freeze
+  GILL_SPACING = { c: 'close', w: 'crowded', d: 'distant' }.freeze
+  GILL_SIZE = { b: 'broad', n: 'narrow' }.freeze
+  GILL_COLOR = { k: 'black', n: 'brown', b: 'buff', h: 'chocolate', g: 'gray', r: 'green', o: 'orange', p: 'pink', u: 'purple', e: 'red', w: 'white', y: 'yellow' }.freeze
+  STALK_SHAPE = { e: 'enlarging', t: 'tapering' }.freeze
+  STALK_ROOT = { b: 'bulbous', c: 'club', u: 'cup', e: 'equal', z: 'rhizomorphs', r: 'rooted', '?': 'missing' }.freeze
+  STALK_SURFACE_ABOVE_RING = { f: 'fibrous', y: 'scaly', k: 'silky', s: 'smooth' }.freeze
+  STALK_SURFACE_BELOW_RING = { f: 'fibrous', y: 'scaly', k: 'silky', s: 'smooth' }.freeze
+  STALK_COLOR_ABOVE_RING = { n: 'brown', b: 'buff', c: 'cinnamon', g: 'gray', o: 'orange', p: 'pink', e: 'red', w: 'white', y: 'yellow' }.freeze
+  STALK_COLOR_BELOW_RING = { n: 'brown', b: 'buff', c: 'cinnamon', g: 'gray', o: 'orange', p: 'pink', e: 'red', w: 'white', y: 'yellow' }.freeze
+  VEIL_TYPE = { p: 'partial', u: 'universal' }.freeze
+  VEIL_COLOR = { n: 'brown', o: 'orange', w: 'white', y: 'yellow' }.freeze
+  RING_NUMBER = { n: 'none', o: 'one', t: 'two' }.freeze
+  RING_TYPE = { c: 'cobwebby', e: 'evanescent', f: 'flaring', l: 'large', n: ' none', p: 'pendant', s: 'sheathing', z: 'zone' }.freeze
+  SPORE_PRINT_COLOR_RANGE = { k: 'black', n: 'brown', b: 'buff', h: 'chocolate', r: 'green', o: 'orange', u: 'purple', w: 'white', y: 'yellow' }.freeze
+  POPULATION = { a: 'abundant', c: 'clustered', n: 'numerous', s: 'scattered', v: 'several', y: 'solitary' }.freeze
+  HABITAT = { g: 'grasses', l: 'leaves', m: 'meadows', p: 'paths', u: 'urban', w: 'waste', d: 'woods' }.freeze
 
   def self.import(file)
     counter = 0
