@@ -10,7 +10,7 @@
       <tr>
         <th><%= f.label :edible %></th>
         <td>
-          <%= f.check_box :edible, { multipe: false }, true %>
+          <%= check_box_tag :edible %>
           <%= f.label :true %>
         </td>
       </tr>
@@ -33,7 +33,7 @@
       <tr>
         <th><%= f.label :bruises %></th>
         <td>
-          <%= f.check_box :bruises, { multipe: false }, true %>
+          <%= check_box_tag :bruises %>
           <%= f.label :true %>
         </td>
       </tr>
@@ -101,7 +101,10 @@
         <td><%= form_multiple_checkbox('HABITAT') %></td>
       </tr>
       <tr>
-        <td colspan='2'><%= f.submit 'Filter' %></td>
+        <td colspan='2'>
+          <%= f.submit 'Filter' %>
+          <%= link_to 'Reset filter', mushrooms_path %>
+        </td>
       </tr>
     </tbody>
   </table>
