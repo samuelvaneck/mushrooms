@@ -62,8 +62,15 @@ class Mushroom < ApplicationRecord
   end
 
   def self.filter_by(params)
+    params = params.except(:commit, :controller, :action, :page)
     results = all
-    results.where!(edible: true) if params[:edible]
-    results.paginate(page: params[:page], per_page: params[:per_page] || 100)
+    params.each do |param|
+      results.where!(table[param[0]].in(param[1]))
+    end
+    results.paginate(page: params[:page], per_page: 100)
+  end
+
+  def self.table
+    Mushroom.arel_table
   end
 end
