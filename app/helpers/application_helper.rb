@@ -7,12 +7,12 @@ module ApplicationHelper
 
   def form_multiple_checkbox(const_str)
     const_h = Mushroom.const_get(const_str)
+    attr_name = const_str.downcase
     content = ''
-
-    content += tag.label const_str.humanize
+    
     const_h.map do |value, text|
-      content += tag.input(type: :checkbox, name: const_str.downcase+[].to_s, value: value) +
-                 tag.label(text.humanize, for: const_str.downcase)
+      content += tag.input(type: :checkbox, name: attr_name + [].to_s, value: value) +
+                 tag.label(text.humanize, for: attr_name)
     end
 
     sanitize content, tags: ['input', 'label'], attributes: ['type', 'name', 'value', 'for']

@@ -1,38 +1,12 @@
 <h1>Mushrooms</h1>
 
-<div>
-  <%= form_with url: mushrooms_path, method: :get, format: :html do |f| %>
-    <div>
-      <%= f.label :edible %>
-      <%= f.check_box :edible, { multipe: false }, true %>
-    <div>
-    <div><%= form_multiple_checkbox('CAP_SHAPE') %></div>
-    <div><%= form_multiple_checkbox('CAP_SURFACE') %></div>
-    <div><%= form_multiple_checkbox('CAP_COLOR') %></div>
-    <div>
-      <%= f.label :bruises %>
-      <%= f.check_box :bruises, { multipe: false }, true %>
-    <div>
-    <div><%= form_multiple_checkbox('ODOR') %></div>
-    <div><%= form_multiple_checkbox('GILL_ATTACHMENT') %></div>
-    <div><%= form_multiple_checkbox('GILL_SPACING') %></div>
-    <div><%= form_multiple_checkbox('GILL_SIZE') %></div>
-    <div><%= form_multiple_checkbox('GILL_COLOR') %></div>
-    <div><%= form_multiple_checkbox('STALK_SHAPE') %></div>
-    <div><%= form_multiple_checkbox('STALK_ROOT') %></div>
-    <div><%= form_multiple_checkbox('STALK_SURFACE_ABOVE_RING') %></div>
-    <div><%= form_multiple_checkbox('STALK_SURFACE_BELOW_RING') %></div>
-    <div><%= form_multiple_checkbox('STALK_COLOR_ABOVE_RING') %></div>
-    <div><%= form_multiple_checkbox('STALK_COLOR_BELOW_RING') %></div>
-    <div><%= form_multiple_checkbox('VEIL_TYPE') %></div>
-    <div><%= form_multiple_checkbox('VEIL_COLOR') %></div>
-    <div><%= form_multiple_checkbox('RING_NUMBER') %></div>
-    <div><%= form_multiple_checkbox('SPORE_PRINT_COLOR_RANGE') %></div>
-    <div><%= form_multiple_checkbox('POPULATION') %></div>
-    <div><%= form_multiple_checkbox('HABITAT') %></div>
-    <%= f.submit 'Filter' %>
-  <% end %>
+<div id='mushroom-filter'>
+  <%= render 'filter' %>
 </div>
+
+<br />
+<br />
+<br />
 
 <table id='mushroom-table'>
   <thead>

@@ -1,0 +1,108 @@
+<%= form_with url: mushrooms_path, method: :get, format: :html do |f| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Filters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><%= f.label :edible %></th>
+        <td>
+          <%= f.check_box :edible, { multipe: false }, true %>
+          <%= f.label :true %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= f.label :cap_shape %></th>
+        <td><%= form_multiple_checkbox('CAP_SHAPE') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :cap_surface %></th>
+        <td><%= form_multiple_checkbox('CAP_SURFACE') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :cap_color %></th>
+        <td><%= form_multiple_checkbox('CAP_COLOR') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :odor %></th>
+        <td><%= form_multiple_checkbox('ODOR') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :bruises %></th>
+        <td>
+          <%= f.check_box :bruises, { multipe: false }, true %>
+          <%= f.label :true %>
+        </td>
+      </tr>
+      <tr>
+        <th><%= f.label :gill_attachment %></th>
+        <td><%= form_multiple_checkbox('GILL_ATTACHMENT') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :gill_spacing %></th>
+        <td><%= form_multiple_checkbox('GILL_SPACING') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :gill_size %></th>
+        <td><%= form_multiple_checkbox('GILL_SIZE') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :gill_color %></th>
+        <td><%= form_multiple_checkbox('GILL_COLOR') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :stalk_shape %></th>
+        <td><%= form_multiple_checkbox('STALK_SHAPE') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :stalk_root %></th>
+        <td><%= form_multiple_checkbox('STALK_ROOT') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :stalk_surface_above_ring %></th>
+        <td><%= form_multiple_checkbox('STALK_SURFACE_ABOVE_RING') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :stalk_surface_below_ring %></th>
+        <td><%= form_multiple_checkbox('STALK_SURFACE_BELOW_RING') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :stalk_color_above_ring %></th>
+        <td><%= form_multiple_checkbox('STALK_COLOR_ABOVE_RING') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :stalk_color_below_ring %></th>
+        <td><%= form_multiple_checkbox('STALK_COLOR_BELOW_RING') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :veil_type %></th>
+        <td><%= form_multiple_checkbox('VEIL_TYPE') %></td>
+      </tr><tr>
+        <th><%= f.label :veil_color %></th>
+        <td><%= form_multiple_checkbox('VEIL_COLOR') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :ring_number %></th>
+        <td><%= form_multiple_checkbox('RING_NUMBER') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :spore_print_color_range %></th>
+        <td><%= form_multiple_checkbox('SPORE_PRINT_COLOR_RANGE') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :population %></th>
+        <td><%= form_multiple_checkbox('POPULATION') %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :habitat %></th>
+        <td><%= form_multiple_checkbox('HABITAT') %></td>
+      </tr>
+      <tr>
+        <td colspan='2'><%= f.submit 'Filter' %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
