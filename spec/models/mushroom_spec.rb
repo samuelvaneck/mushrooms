@@ -3,6 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Mushroom, type: :model do
+  let(:mushroom_edible) { FactoryBot.create :mushroom, edible: true }
+  let(:mushroom_poisonous) { FactoryBot.create :mushroom, edible: false }
+
   describe '#import' do
     context 'with valid data' do
       before { @file = file_fixture('test_import.data') }
@@ -43,6 +46,18 @@ RSpec.describe Mushroom, type: :model do
         expect(mushroom.spore_print_color_range).to eq 'k'
         expect(mushroom.population).to eq 's'
         expect(mushroom.habitat).to eq 'u'
+      end
+    end
+  end
+
+  describe '#filter_by' do
+    before do
+      mushroom_edible
+      mushroom_poisonous
+    end
+    context 'when filtering on editable mushrooms' do
+      it 'returns only the edible mushrooms' do
+        expect(Mushroom.filter_by({ edible: 1 })).to contain_exactly mushroom_edible
       end
     end
   end
