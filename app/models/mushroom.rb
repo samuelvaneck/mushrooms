@@ -60,4 +60,10 @@ class Mushroom < ApplicationRecord
 
     counter
   end
+
+  def self.filter_by(params)
+    results = all
+    results.where!(edible: true) if params[:edible]
+    results.paginate(page: params[:page], per_page: params[:per_page] || 100)
+  end
 end

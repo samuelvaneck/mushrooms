@@ -1,7 +1,7 @@
 <h1>Mushrooms</h1>
 
 <div>
-  <%= form_with url: mushrooms_path do |f| %>
+  <%= form_with url: mushrooms_path, method: :get, format: :html do |f| %>
     <div>
       <%= f.label :edible %>
       <%= f.check_box :edible, { multipe: false }, true %>
@@ -34,7 +34,7 @@
   <% end %>
 </div>
 
-<table>
+<table id='mushroom-table'>
   <thead>
     <tr>
       <th>#</th>
@@ -67,3 +67,7 @@
     <%= render @mushrooms %>
   </tbody>
 </table>
+
+<div id='pagination'>
+  <%= will_paginate @mushrooms %>
+</div>

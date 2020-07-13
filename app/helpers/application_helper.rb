@@ -11,7 +11,7 @@ module ApplicationHelper
 
     content += tag.label const_str.humanize
     const_h.map do |value, text|
-      content += tag.input(type: :checkbox, name: const_str.downcase, value: value) +
+      content += tag.input(type: :checkbox, name: const_str.downcase+[].to_s, value: value) +
                  tag.label(text.humanize, for: const_str.downcase)
     end
 
