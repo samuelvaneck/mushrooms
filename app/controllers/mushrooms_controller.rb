@@ -2,6 +2,6 @@
 
 class MushroomsController < ApplicationController
   def index
-    @mushrooms = Mushroom.all
+    @mushrooms = Mushroom.filter_by(params)
   end
 end
