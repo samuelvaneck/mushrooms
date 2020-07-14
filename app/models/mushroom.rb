@@ -62,9 +62,8 @@ class Mushroom < ApplicationRecord
   end
 
   def self.filter_by(params)
-    params = params.except(:commit, :controller, :action, :page)
     results = all
-    params.each do |param|
+    params.except(:commit, :controller, :action, :page).each do |param|
       results.where!(table[param[0]].in(param[1]))
     end
     results.paginate(page: params[:page], per_page: 100)
