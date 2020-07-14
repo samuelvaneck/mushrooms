@@ -3,8 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe Mushroom, type: :model do
-  let(:mushroom_edible) { FactoryBot.create :mushroom, edible: true }
-  let(:mushroom_poisonous) { FactoryBot.create :mushroom, edible: false }
+  let(:edible) { FactoryBot.create :mushroom, edible: true, ring_number: 'o' }
+  let(:poisonous) { FactoryBot.create :mushroom, edible: false, ring_number: 'o' }
+  let(:odor_almond) { FactoryBot.create :mushroom, odor: 'a', ring_number: 'o' }
+  let(:odor_fishy) { FactoryBot.create :mushroom, odor: 'y', ring_number: 'o' }
+  let(:odor_mutsy) { FactoryBot.create :mushroom, odor: 'm', ring_number: 'o' }
+  let(:edible_brown_gill_color_two_rings) { FactoryBot.create :mushroom, edible: true, gill_color: 'n', ring_number: 't' }
 
   describe '#import' do
     context 'with valid data' do
@@ -51,13 +55,39 @@ RSpec.describe Mushroom, type: :model do
   end
 
   describe '#filter_by' do
-    before do
-      mushroom_edible
-      mushroom_poisonous
-    end
     context 'when filtering on editable mushrooms' do
+      before do
+        edible
+        poisonous
+      end
       it 'returns only the edible mushrooms' do
-        expect(Mushroom.filter_by({ edible: 1 })).to contain_exactly mushroom_edible
+        expect(Mushroom.filter_by({ edible: 1 })).to contain_exactly edible
+      end
+    end
+
+    context 'when filtering on multiple values' do
+      before do
+        odor_almond
+        odor_fishy
+        odor_mutsy
+      end
+      it 'returns all the mushrooms that match the values' do
+        expect(Mushroom.filter_by({ odor: ['a', 'y'] })).to contain_exactly odor_almond, odor_fishy
+      end
+    end
+
+    context 'when filtering on edible, brown gill-color and two rings' do
+      before do
+        edible
+        poisonous
+        odor_almond
+        odor_fishy
+        odor_mutsy
+        edible_brown_gill_color_two_rings
+      end
+      it 'returns the mushrooms that match the filter' do
+        filter = { edible: true, gill_color: 'n', ring_number: 't' }
+        expect(Mushroom.filter_by(filter)).to contain_exactly edible_brown_gill_color_two_rings
       end
     end
   end
