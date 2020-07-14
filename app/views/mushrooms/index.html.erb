@@ -5,7 +5,9 @@
 </div>
 
 <br />
-<br />
+<div id='pagination'>
+  <%= will_paginate @mushrooms %>
+</div>
 <br />
 
 <table id='mushroom-table'>
@@ -41,7 +43,3 @@
     <%= render @mushrooms %>
   </tbody>
 </table>
-
-<div id='pagination'>
-  <%= will_paginate @mushrooms %>
-</div>
