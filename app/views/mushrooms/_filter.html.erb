@@ -10,7 +10,7 @@
       <tr>
         <th><%= f.label :edible %></th>
         <td>
-          <%= check_box_tag :edible %>
+          <%= check_box_tag :edible, 1, params['edible'] == '1' %>
           <%= f.label :true %>
         </td>
       </tr>
@@ -33,7 +33,7 @@
       <tr>
         <th><%= f.label :bruises %></th>
         <td>
-          <%= check_box_tag :bruises %>
+          <%= check_box_tag :bruises, 1, params['bruises'] == '1' %>
           <%= f.label :true %>
         </td>
       </tr>
