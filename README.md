@@ -1,24 +1,42 @@
-# README
+# Mushrooms
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  
 
-Things you may want to cover:
+The project will import mushrooms from the file. It has taken from the [Univercity of California Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Mushroom).
+  
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+Before you begin, ensure you have met the following requirements:
 
-* Configuration
+<!--- These are just example requirements. Add, duplicate or remove as required --->
 
-* Database creation
+* You have installed the latest version of `Ruby` , `Ruby on Rails` and `Postgresql`
 
-* Database initialization
+* You have a `Linux/Mac` machine.
+  
 
-* How to run the test suite
+## Using Mushrooms
+  
 
-* Services (job queues, cache servers, search engines, etc.)
+To use Mushrooms follow these steps:
 
-* Deployment instructions
+**New environment**
 
-* ...
+```
+1. rails db:create
+2. rails db:schema:load
+3. rails db:seed
+4. rails server
+```
+**Existing environment**
+```
+1. rails db:migrate
+4. rails server
+```
+
+## Systems / components used
+
+* Rails 6.0.3.2
+* Ruby 2.7.1
+* Postgres
